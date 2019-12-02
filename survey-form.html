@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Olive Garden</title>
+    <link rel="stylesheet" type="text/css" href="survey-form.css">
+</head>
+<body>
+    
+<div class="container">
+  <header>
+    <h1 id="title"><span style="color: green">Olive Garden</span> Contact Us </h1>
+    <p id="description" style="font-style: italic; font-weight:550">Thank you for ordering with us</p>
+  </header>
+  
+<form action="" id="survey-form">
+ 
+  <div class="comment-radio-wrap"> 
+    <div class="comment">
+      <p>Let us know what you think</p>
+      <textarea
+          id="comments"
+          class="input-textarea"
+          name="comment"
+          placeholder="I really liked your food. But i have one...."
+       ></textarea>
+    </div>
+
+    <div class="radio-buttons">
+      <br/><br/><br/>
+        <label>
+          <input
+            name="user-recommend"
+            value="i-have-a-question"
+            type="radio"
+            class="input-radio"
+            checked
+          />I have a question</label
+        >
+        <label>
+          <input
+            name="user-recommend"
+            value="i-liked-something"
+            type="radio"
+            class="input-radio"
+          />I liked something</label
+        >
+        <label
+          ><input
+            name="user-recommend"
+            value="i-disliked-somethinge"
+            type="radio"
+            class="input-radio"
+          />I disliked something</label
+        >
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label id="name-label" for="name">Name</label>
+      <input 
+             id="name" 
+             type="text" 
+             placeholder="Enter your name"
+             class="form-control"
+             required
+             />
+  </div>
+  <div class="form-group">
+    <label id="email-label" for="email">Email</label>
+      <input 
+             id="email" 
+             type="email" 
+             placeholder="Enter your email"
+             class="form-control"
+             required
+             />
+  </div>
+  <div class="form-group">
+    <label id="number-label" for="number">Number<span class="clue"> (optional)</span></label>
+    <input 
+           id="number" 
+           type="number"
+           name="number"
+           min="10"
+           max="12"
+           placeholder="Enter your phone"
+           class="form-control"
+           />
+  </div>
+  
+  <div class="form-group">
+      <p>
+        What is your favorite food at Olive Garden?
+      </p>
+      <select id="dropdown" name="mostLike" class="form-control" required>
+        <option disabled selected value>Select a food</option>
+        <option value="challenges">Pasta</option>
+        <option value="projects">Lasagna Fritta</option>
+        <option value="community">Fried Mozzarella</option>
+        <option value="openSource">Pizza</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>
+        What would you like to see improved?
+        <span class="clue">(Check all that apply)</span>
+      </p>
+      <label
+        ><input
+          name="prefer"
+          value="olive-garden-rewards "
+          type="checkbox"
+          class="input-checkbox"
+        /> Olive Garden Rewards </label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="more-mayo"
+          type="checkbox"
+          class="input-checkbox"
+        />More mayo</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="donations"
+          type="checkbox"
+          class="input-checkbox"
+        />Donations</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="interior"
+          type="checkbox"
+          class="input-checkbox"
+        />Interior</label
+      >
+      <label
+        ><input
+          name="prefer"
+          value="online-customer-service"
+          type="checkbox"
+          class="input-checkbox"
+        />Online customer service</label
+      >
+    </div>
+  
+  <div class="form-group">
+    <button type="submit" id="submit" class="submit-button">
+      Submit
+    </button>
+  </div>
+</form>
+</div>
+
+</body>
+</html>

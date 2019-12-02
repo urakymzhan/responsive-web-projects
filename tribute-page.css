@@ -1,0 +1,86 @@
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+}
+
+#image {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  width: 60%;
+  margin: 40px 70px auto auto;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  margin: 25px;
+  background-color: rgb(47,79,79, 0.2);
+  color: hsl(0, 0%, 0%, 0.9);
+}
+
+#img-div {
+  width: 30%;
+  height: 440px;
+  align-self: stretch;
+  background-color: #FFF;
+  margin-top: 30px;
+}
+#img-caption {
+  margin: 5px;
+  text-align: center;
+  font-size: 11px;
+  font-family: cursive;
+}
+#tribute-info {
+  width: 66%;
+  align-self: stretch;
+  padding: 10px 60px;
+  text-align: justify;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#tribute-info ul li {
+  text-align: center;
+}
+
+#tribute-info ul {
+  padding-right: 30px;
+}
+
+li {
+  list-style: none;
+}
+
+aside {
+  width: 4%;
+  align-self: stretch;
+  padding-top: 60px;
+  text-align: center;
+}
+
+aside a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%, 0.6);
+}
+
+aside a:hover {
+  color: hsl(0, 0%, 0%);
+}
+
+aside a p {
+  line-height: 3px;
+  font-family: cursive;
+  font-size: 12px;
+}
+
+h4 {
+  text-align: center;
+}
