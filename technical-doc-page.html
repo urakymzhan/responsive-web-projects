@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Technical Documentation Page</title>
+  <link rel="stylesheet" type="text/css" href="tech-doc-page.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header>Python 3.x Docs</header>
+    <h5>Table of Contents</h5>
+    <ul>
+      <li><a class="nav-link" href="#Summary_Release_highlights">Summary Release highlights</a></li>
+      <li><a class="nav-link" href="#New_Features">New Features</a></li>
+      <li><a class="nav-link" href="#Other_Language_Changes">Other Language Changes</a></li>
+      <li><a class="nav-link" href="#New_Modules">New Modules</a></li>
+      <li><a class="nav-link" href="#Improved_Modules">Improved Modules</a></li>
+      <li><a class="nav-link" href="#Optimizations">Optimizations</a></li>
+      <li><a class="nav-link" href="#Build_and_C_API_Changes">Build and C API Changes</a></li>
+      <li><a class="nav-link" href="#Deprecated">Deprecated</a></li>
+      <li><a class="nav-link" href="#API_and_Feature_Removals">API and Feature Removals</a></li>
+      <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+  </nav>
+<main id="main-doc">
+  <section class="main-section" id="Summary_Release_highlights">
+    <header>Summary Release highlights</header>
+      <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum.</p>
+      <code>
+        x = 5;<br>
+        y = 6;<br>
+        z = x + y;
+      </code>
+      <p>Egestas pretium aenean pharetra magna ac placerat vestibulum lectus. Sollicitudin nibh sit amet commodo. Consectetur adipiscing elit pellentesque habitant.</p>
+        <ul>
+       <li>Etiam tempor orci eu lobortis elementum nibh tellus.</li>
+        <li>Aliquam id diam maecenas ultricies.</li>
+        </ul>
+      <p>Etiam tempor orci eu lobortis elementum nibh tellus. Cras semper auctor neque vitae tempus quam. Massa id neque aliquam vestibulum morbi blandit cursus risus. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Adipiscing commodo elit at imperdiet dui.</p>
+      <p>Aliquam id diam maecenas ultricies. Felis eget velit aliquet sagittis id consectetur purus. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Maecenas accumsan lacus vel facilisis volutpat est velit egestas dui. Sed faucibus turpis in eu mi bibendum neque. Senectus et netus et malesuada</p>
+      <code>
+        while (block := f.read(256)) != '':
+            process(block)
+      </code>
+      </article>
+  </section>
+  <section class="main-section" id="New_Features">
+     <header>New Features</header>
+      <article>
+        <p>There is a new function parameter syntax / to indicate that some function parameters must be specified positionally and cannot be used as keyword arguments. This is the same notation shown by help() for C functions annotated with Larry Hastings’ Argument Clinic tool.
+      </p>
+        <p>In the following example, parameters a and b are positional-only, while c or d can be positional or keyword, and e or f are required to be keywords:</p>
+        <code>
+          def f(a, b, /, c, d, *, e, f):
+            print(a, b, c, d, e, f)
+        </code>
+        <p>In the following example, parameters a and b are positional-only, while c or d can be positional or keyword, and e or f are required to be keywords:</p>
+        <ul>
+        <li>In the following example</li>
+        </ul>
+        <p>In the following example, parameters a and b are positional-only, while c or d can be positional or keyword, and e or f are required to be keywords:</p>
+      <article>
+  </section>
+  <section class="main-section" id="Other_Language_Changes">
+    <header>Other Language Changes</header>
+    <article>
+      <p>A continue statement was illegal in the finally clause due to a problem with the implementation. In Python 3.8 this restriction was lifted. (Contributed by Serhiy Storchaka in bpo-32489.)
+
+The bool, int, and fractions.Fraction types now have an as_integer_ratio() method like that found in float and decimal.Decimal. This minor API extension makes it possible to write numerator, denominator = x.as_integer_ratio() and have it work across multiple numeric types. (Contributed by Lisa Roach in bpo-33073 and Raymond Hettinger in bpo-37819.) </p>
+      <p>Constructors of int, float and complex will now use the __index__() special method, if available and the corresponding method __int__(), __float__() or __complex__() is not available. (Contributed by Serhiy Storchaka in bpo-20092.)
+Added support of \N{name} escapes in regular expressions:</p>
+      <code>
+        >>> notice = 'Copyright © 2019'
+        >>> copyright_year_pattern = re.compile(r'\N{copyright sign}\s*(\d{4})')
+        >>> int(copyright_year_pattern.search(notice).group(1))
+2019
+      </code>
+      <p> Dict and dictviews are now iterable in reversed insertion order using reversed(). (Contributed by Rémi Lapeyre in bpo-33462.)
+
+The syntax allowed for keyword names in function calls was further restricted. In particular, f((keyword)=arg) is no longer allowed. It was never intended to permit more than a bare name on the left-hand side of a keyword argument assignment term. (Contributed by Benjamin Peterson in bpo-34641.)</p>
+    </article>
+  </section>
+  <section class="main-section" id="New_Modules">
+    <header>New Modules</header>
+    <article>
+      <p>The new importlib.metadata module provides (provisional) support for reading metadata from third-party packages. For example, it can extract an installed package’s version number, list of entry points, and more:
+</p>
+  <code>
+    >>>
+>>> # Note following example requires that the popular "requests"
+>>> # package has been installed.
+>>>
+>>> from importlib.metadata import version, requires, files
+>>> version('requests')
+'2.22.0'
+>>> list(requires('requests'))
+['chardet (<3.1.0,>=3.0.2)']
+>>> list(files('requests'))[:5]
+[PackagePath('requests-2.22.0.dist-info/INSTALLER'),
+ PackagePath('requests-2.22.0.dist-info/LICENSE'),
+ PackagePath('requests-2.22.0.dist-info/METADATA'),
+ PackagePath('requests-2.22.0.dist-info/RECORD'),
+ PackagePath('requests-2.22.0.dist-info/WHEEL')]
+  </code>
+      <p>(Contributed by Barry Warsaw and Jason R. Coombs in bpo-34632.)t</p>
+    <ul>
+      <li>Nullam non nisi est sit amet facilisis magna.</li>
+      <li> Metus vulputate eu scelerisque felis imperdiet.</li>
+      <li>Et molestie ac feugiat sed lectus vestibulum.</li>
+      <li>Sed adipiscing diam donec adipiscing tristique risus</li>
+    </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Improved_Modules">
+    <header>Improved Modules</header>
+    <article>
+      <p>AST nodes now have end_lineno and end_col_offset attributes, which give the precise location of the end of the node. (This only applies to nodes that have lineno and col_offset attributes.)
+
+New function ast.get_source_segment() returns the source code for a specific AST node.
+
+(Contributed by Ivan Levkivskyi in bpo-33416.)
+
+The ast.parse() function has some new flags:
+</p>
+<ul>
+  <li>
+type_comments=True causes it to return the text of PEP 484 and PEP 526 type comments associated with certain AST nodes;</li>
+<li>
+mode='func_type' can be used to parse PEP 484 “signature type comments” (returned for function definition AST nodes);</li>
+<li>
+feature_version=(3, N) allows specifying an earlier Python 3 version. For example, feature_version=(3, 4) will treat async and await as non-reserved words.</li>
+      </ul>
+
+  <p>(Contributed by Guido van Rossum in bpo-35766.)</p>
+    </article>
+  </section>
+  <section class="main-section" id="Optimizations">
+    <header>Optimizations</header>
+    <article>
+      <p>The subprocess module can now use the os.posix_spawn() function in some cases for better performance. Currently, it is only used on macOS and Linux (using glibc 2.24 or newer) if all these conditions are met:</p>
+<ul>
+  <li>close_fds is false;</li>
+
+  <li>preexec_fn, pass_fds, cwd and start_new_session parameters are not set;</li>
+
+  <li>the executable path contains a directory.</li>
+      </ul>
+      <p>
+(Contributed by Joannah Nanjekye and Victor Stinner in bpo-35537.)
+
+shutil.copyfile(), shutil.copy(), shutil.copy2(), shutil.copytree() and shutil.move() use platform-specific “fast-copy” syscalls on Linux and macOS in order to copy the file more efficiently. “fast-copy” means that the copying operation occurs within the kernel, avoiding the use of userspace buffers in Python as in “outfd.write(infd.read())”. On Windows shutil.copyfile() uses a bigger default buffer size (1 MiB instead of 16 KiB) and a memoryview()-based variant of shutil.copyfileobj() is used. The speedup for copying a 512 MiB file within the same partition is about +26% on Linux, +50% on macOS and +40% on Windows. Also, much less CPU cycles are consumed. See Platform-dependent efficient copy operations section. (Contributed by Giampaolo Rodolà in bpo-33671.)
+      </p>
+    </article>
+  </section>
+   <section class="main-section" id="Build_and_C_API_Changes">
+    <header>Build and C API Changes</header>
+    <article>
+      <p>Default sys.abiflags became an empty string: the m flag for pymalloc became useless (builds with and without pymalloc are ABI compatible) and so has been removed. (Contributed by Victor Stinner in bpo-36707.)
+
+        Example of changes:</p>
+<ul>
+  <li> Only python3.8 program is installed, python3.8m program is gone.</li>
+
+  <li>Only python3.8-config script is installed, python3.8m-config script is gone.</li>
+
+<li>The m flag has been removed from the suffix of dynamic library filenames: extension modules in the standard library as well as those produced and installed by third-party packages, like those downloaded from PyPI. On Linux, for example, the Python 3.7 suffix .cpython-37m-x86_64-linux-gnu.so became .cpython-38-x86_64-linux-gnu.so in Python 3.8.</li>
+
+  <p>The header files have been reorganized to better separate the different kinds of APIs:</p>
+<ul>
+  <li>Include/*.h should be the portable public stable C API.</li>
+
+<li>Include/cpython/*.h should be the unstable C API specific to CPython; public API, with some private API prefixed by _Py or _PY.</li>
+
+<li>Include/internal/*.h is the private internal C API very specific to CPython. This API comes with no backward compatibility warranty and should not be used outside CPython. It is only exposed for very specific needs like debuggers and profiles which has to access to CPython internals without calling functions. This API is now installed by make install.</li>
+
+<p>(Contributed by Victor Stinner in bpo-35134 and bpo-35081, work initiated by Eric Snow in Python 3.7.)</p>
+
+<p>Some macros have been converted to static inline functions: parameter types and return type are well defined, they don’t have issues specific to macros, variables have a local scopes. Examples:</p>
+
+    </article>
+  </section>
+    <section class="main-section" id="Deprecated">
+    <header>Deprecated</header>
+    <article>
+      <p>The distutils bdist_wininst command is now deprecated, use bdist_wheel (wheel packages) instead. (Contributed by Victor Stinner in bpo-37481.)</p>
+<p>
+Deprecated methods getchildren() and getiterator() in the ElementTree module now emit a DeprecationWarning instead of PendingDeprecationWarning. They will be removed in Python 3.9. (Contributed by Serhiy Storchaka in bpo-29209.)</p>
+<p>
+Passing an object that is not an instance of concurrent.futures.ThreadPoolExecutor to loop.set_default_executor() is deprecated and will be prohibited in Python 3.9. (Contributed by Elvis Pranskevichus in bpo-34075.)</p>
+<p>
+The __getitem__() methods of xml.dom.pulldom.DOMEventStream, wsgiref.util.FileWrapper and fileinput.FileInput have been deprecated.
+</p>
+<p>
+Implementations of these methods have been ignoring their index parameter, and returning the next item instead. (Contributed by Berker Peksag in bpo-9372.) </p>
+<p>
+The typing.NamedTuple class has deprecated the _field_types attribute in favor of the __annotations__ attribute which has the same information. (Contributed by Raymond Hettinger in bpo-36320.) </p>
+<p>
+ast classes Num, Str, Bytes, NameConstant and Ellipsis are considered deprecated and will be removed in future Python versions. Constant should be used instead. (Contributed by Serhiy Storchaka in bpo-32892.)
+ </p>
+      <p>
+ast.NodeVisitor methods visit_Num(), visit_Str(), visit_Bytes(), visit_NameConstant() and visit_Ellipsis() are deprecated now and will not be called in future Python versions. Add the visit_Constant() method to handle all constant nodes. (Contributed by Serhiy Storchaka in bpo-36917.) </p>
+<p>
+The asyncio.coroutine() decorator is deprecated and will be removed in version 3.10. Instead of @asyncio.coroutine, use async def instead. (Contributed by Andrew Svetlov in bpo-36921.) </p>
+<p>
+In asyncio, the explicit passing of a loop argument has been deprecated and will be removed in version 3.10 for the following: asyncio.sleep(), asyncio.gather(), asyncio.shield(), asyncio.wait_for(), asyncio.wait(), asyncio.as_completed(), asyncio.Task, asyncio.Lock, asyncio.Event, asyncio.Condition, asyncio.Semaphore, asyncio.BoundedSemaphore, asyncio.Queue, asyncio.create_subprocess_exec(), and asyncio.create_subprocess_shell(). </p>
+<p>
+The explicit passing of coroutine objects to asyncio.wait() has been deprecated and will be removed in version 3.11. (Contributed by Yury Selivanov in bpo-34790.) </p>
+<p>
+The following functions and methods are deprecated in the gettext module: lgettext(), ldgettext(), lngettext() and ldngettext(). They return encoded bytes, and it’s possible that you will get unexpected Unicode-related exceptions if there are encoding problems with the translated strings. It’s much better to use alternatives which return Unicode strings in Python 3. These functions have been broken for a long time.</p>
+    </article>
+  </section>
+   </section>
+    <section class="main-section" id="API_and_Feature_Removals">
+    <header>API and Feature Removals</header>
+    <article>
+      <p>The following features and APIs have been removed from Python 3.8:</p>
+<ul>
+  <li>
+Starting with Python 3.3, importing ABCs from collections was deprecated, and importing should be done from collections.abc. Being able to import from collections was marked for removal in 3.8, but has been delayed to 3.9. (See bpo-36952.)
+  </li>
+  <li>
+The macpath module, deprecated in Python 3.7, has been removed. (Contributed by Victor Stinner in bpo-35471.)
+</li>
+  <li>
+The function platform.popen() has been removed, after having been deprecated since Python 3.3: use os.popen() instead. (Contributed by Victor Stinner in bpo-35345.)
+</li>
+  <li>
+The function time.clock() has been removed, after having been deprecated since Python 3.3: use time.perf_counter() or time.process_time() instead, depending on your requirements, to have well-defined behavior. (Contributed by Matthias Bussonnier in bpo-36895.)
+</li>
+  <li>
+The pyvenv script has been removed in favor of python3.8 -m venv to help eliminate confusion as to what Python interpreter the pyvenv script is tied to. (Contributed by Brett Cannon in bpo-25427.)
+</li>
+  <li>
+parse_qs, parse_qsl, and escape are removed from the cgi module. They are deprecated in Python 3.2 or older. They should be imported from the urllib.parse and html modules instead.</li>
+      </ul>
+
+    </article>
+  </section>
+   <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article>
+      <p>All the documentation in this page is taken from: <a href="https://www.python.org/" target="_blank" style="text-decoration:none; color: green"> Official Python Documentation</a></p>
+    </article>
+  </section>
+</main>
+
+</body>
+</html>
